@@ -1,0 +1,11 @@
+{{next.title}}
+<table class="container">
+<table id="tblCRUD">
+    <tbody>
+        <tr><td><span>title</span></td><td><input type="text" ng-model="next.post.title"></td></tr>
+        <tr><td><span>body</span></td><td><input type="text" ng-model="next.post.body"/></td></tr>
+        <tr><td><span>id</span></td><td><input type="text" readonly ng-model="next.post.id"/></td></tr>
+    </tbody>
+</table>
+    <tr><td><input type="button" value="update" ng-click="next.update()"></td><td><input type="button" value="reset" ng-click="next.reset()"></td></tr>
+</table>

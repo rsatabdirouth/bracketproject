@@ -1,0 +1,30 @@
+<h4>Home:{{home.title}}</h4>
+<nav aria-label="...">
+    <ul class="pagination">
+
+        <li ng-class="home.currentpage==1? 'disabled':''"><a href="javascript:" aria-label="previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li ng-class="home.currentpage == page? 'active':''" ng-repeat="page in home.pagelist" ng-click="home.pagechange(page)">
+            <a href="javascript:">{{page}}</a>
+        </li>
+        <li ng-class="home.currentpage == home.pagelist.length? 'disabled':''"><a href="javascript:" aria-abel="next"><span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+</nav>
+
+<div class="list-group col-md-6 col-lg-6">
+<ul style="list-style:none">
+    <li ng-repeat="post in home.pagedpost" ng-click="home.currentpost= post"><a class="list-group-item">{{post.title}}</a></li>
+</ul>
+</div>
+
+<div class="panel-group" ng-show="home.currentpost">
+<div class="panel panel-default col-lg-6 col-md-6 ">
+
+
+    <div class="panel-heading">{{home.currentpost.title}}</div>
+    <div class="panel-body" >{{home.currentpost.body}}</div>
+   
+   <button ng-click="home.edit(home.currentpost.id)">edit</button>
+</div>
+</div>
+
+
